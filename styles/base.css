@@ -1,0 +1,310 @@
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #f3f4f6;
+    --text-dark: #1f2937;
+    --text-light: #ffffff;
+    --accent-color: #3b82f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #e5e7eb;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+#course-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#course-title .highlight-name {
+    color: #fbbf24;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background-color: #374151;
+    padding: 1rem 2rem;
+    margin: 0 -2rem -1.5rem -2rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background-color: transparent;
+}
+
+main h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 0 0 2rem 0;
+    padding: 0;
+    font-size: 2rem;
+    grid-column: 1 / -1;
+    background-color: transparent;
+}
+
+/* Card Layout using CSS Grid */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 70% 30%;
+        gap: 2rem;
+    }
+    
+    main h1 {
+        grid-column: 1 / -1;
+    }
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+/* About Me Card - 70% width */
+.card-about {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .card-about {
+        grid-column: 1;
+    }
+}
+
+/* Web Dev Resources Card - 30% width */
+.card-resources {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .card-resources {
+        grid-column: 2;
+    }
+}
+
+.card-content {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.text-content {
+    margin-bottom: 1rem;
+}
+
+.text-content-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-right: 40px;
+}
+
+.text-content-container p {
+    flex: 0 0 80%;
+    margin: 0;
+}
+
+.profile-img {
+    flex: 0 0 20%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* width: 100%; */
+    height: auto;
+    /* max-width: 100%; */
+}
+
+.card-content hr {
+    border: none;
+    border-top: 1px solid #d1d5db;
+    margin: 1.5rem auto;
+    width: 50%;
+}
+
+.card-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.card-content h3:first-of-type {
+    text-align: center;
+}
+
+.location-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.location-info figure {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.location-info img {
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-info figcaption {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.location-info p {
+    flex: 1;
+}
+
+/* Web Dev Resources Section */
+.card-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.card-content ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-content ul li a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.card-content ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .card {
+        margin-bottom: 0;
+    }
+    
+    .location-info {
+        flex-direction: row;
+    }
+    
+    .location-info figure {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        gap: 1rem;
+    }
+    
+    nav a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .text-content-container {
+        flex-direction: column;
+    }
+    
+    .text-content-container p {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    
+    .profile-img {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 1.5rem;
+    }
+    
+    .location-info {
+        flex-direction: column;
+    }
+}
+
