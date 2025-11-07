@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Temple Album - WDD 131</title>
+    <meta name="description" content="A collection of beautiful temple images from around the world.">
+    <meta name="author" content="KWIZERA Steven">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span id="hamburgerIcon">☰</span>
+        </button>
+        <nav id="primaryNav">
+            <ul>
+                <li><a href="temples.html">Home</a></li>
+                <li><a href="#old">Old</a></li>
+                <li><a href="#new">New</a></li>
+                <li><a href="#large">Large</a></li>
+                <li><a href="#small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Home</h2>
+        <div class="temple-grid">
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/800x500/san-diego-temple-765109-wallpaper.jpg"
+                    alt="San Diego California Temple" loading="lazy" width="800" height="500">
+                <figcaption>San Diego California</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/800x500/aba-nigeria-temple-lds-1636397-wallpaper.jpg"
+                    alt="Aba Nigeria Temple" loading="lazy" width="800" height="500"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/4a148c/ffffff?text=Aba+Nigeria+Temple';">
+                <figcaption>Paris France</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/800x500/san-diego-temple-765109-wallpaper.jpg"
+                    alt="San Diego California Temple" loading="lazy" width="800" height="500">
+                <figcaption>Rome Italy</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/800x500/aba-nigeria-temple-lds-1636397-wallpaper.jpg"
+                    alt="Aba Nigeria Temple" loading="lazy" width="800" height="500"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/4a148c/ffffff?text=Aba+Nigeria+Temple';">
+                <figcaption>Salt Lake City Utah</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/800x500/san-diego-temple-765109-wallpaper.jpg"
+                    alt="San Diego California Temple" loading="lazy" width="800" height="500">
+                <figcaption>Washington D.C.</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/800x500/aba-nigeria-temple-lds-1636397-wallpaper.jpg"
+                    alt="Aba Nigeria Temple" loading="lazy" width="800" height="500"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/4a148c/ffffff?text=Aba+Nigeria+Temple';">
+                <figcaption>Accra Ghana</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/800x500/san-diego-temple-765109-wallpaper.jpg"
+                    alt="San Diego California Temple" loading="lazy" width="800" height="500">
+                <figcaption>Johannesburg South Africa</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/800x500/aba-nigeria-temple-lds-1636397-wallpaper.jpg"
+                    alt="Aba Nigeria Temple" loading="lazy" width="800" height="500"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/4a148c/ffffff?text=Aba+Nigeria+Temple';">
+                <figcaption>Aba Nigeria</figcaption>
+            </figure>
+            <figure>
+                <img src="https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/800x500/san-diego-temple-765109-wallpaper.jpg"
+                    alt="San Diego California Temple" loading="lazy" width="800" height="500">
+                <figcaption>Kigali Rwanda</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> KWIZERA Steven 🌸 Rwanda</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

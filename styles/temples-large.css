@@ -1,0 +1,83 @@
+/* Larger View CSS for Temple Album */
+
+/* Media Query for tablets and larger screens */
+@media (min-width: 768px) {
+    /* Hide hamburger button in larger views */
+    #hamburgerBtn {
+        display: none;
+    }
+
+    /* Show navigation menu horizontally */
+    nav {
+        display: block;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    nav ul li {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li:last-child {
+        border-right: none;
+    }
+
+    nav a {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    nav a:hover {
+        background-color: var(--hover-color);
+    }
+
+    /* Adjust header layout */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    /* Temple Grid - 2 columns for tablets */
+    .temple-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Media Query for desktop screens */
+@media (min-width: 1024px) {
+    /* Temple Grid - 3 columns for desktop */
+    .temple-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    main {
+        padding: 3rem 2rem;
+    }
+
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    nav a {
+        padding: 0.75rem 2rem;
+    }
+}
+
