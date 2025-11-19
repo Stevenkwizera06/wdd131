@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rwanda - WDD 131</title>
+    <meta name="description" content="Information about Rwanda, including data, weather, and cultural facts.">
+    <meta name="author" content="KWIZERA Steven">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Rwanda</h1>
+    </header>
+
+    <main>
+        <div class="hero-container">
+            <picture class="hero-image">
+                <img src="images/Rwanda image.jpg" alt="Beautiful landscape of Rwanda, the Land of a Thousand Hills"
+                    width="800" height="600">
+            </picture>
+
+        <section class="data-section">
+            <h2>Data</h2>
+            <dl>
+                <dt>Area:</dt>
+                <dd>26,338 sq km</dd>
+                <dt>Population:</dt>
+                <dd>13,400,541</dd>
+                <dt>Capital:</dt>
+                <dd>Kigali</dd>
+                <dt>Languages:</dt>
+                <dd>Kinyarwanda, French, English, Swahili</dd>
+                <dt>Currency:</dt>
+                <dd>Rwandan Franc (RWF)</dd>
+                <dt>Time Zone:</dt>
+                <dd>UTC+2 (CAT)</dd>
+                <dt>Calling Code:</dt>
+                <dd>+250</dd>
+                <dt>Internet TLD:</dt>
+                <dd>.rw</dd>
+            </dl>
+        </section>
+
+        <section class="weather-section">
+            <h2>Weather <span class="weather-icon-mobile"><img src="images/weather-icon.svg" alt="Weather icon" width="24" height="24"></span></h2>
+            <dl>
+                <dt>Temperature:</dt>
+                <dd><span id="temperature">10</span>°C</dd>
+                <dt>Conditions:</dt>
+                <dd>Partly Cloudy</dd>
+                <dt>Wind:</dt>
+                <dd><span id="windSpeed">8</span> km/h</dd>
+                <dt>Wind Chill:</dt>
+                <dd><span id="windChill">N/A</span></dd>
+            </dl>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> KWIZERA Steven 🌸 Rwanda</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
+
