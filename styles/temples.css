@@ -179,6 +179,52 @@ figcaption {
     background-color: var(--secondary-color);
 }
 
+/* Temple Card Styles */
+.temple-card {
+    margin: 0;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.temple-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.temple-card h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 1rem 0;
+    text-align: left;
+}
+
+.temple-card p {
+    font-family: 'Merriweather', serif;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.temple-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 4px;
+    object-fit: cover;
+    background-color: #e5e7eb;
+}
+
 /* Footer Styles */
 footer {
     background-color: var(--primary-color);
