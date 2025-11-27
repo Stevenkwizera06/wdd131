@@ -51,8 +51,11 @@ function populateProducts() {
   });
 }
 
+// Get current year and last modified date
+document.getElementById("currentyear").textContent = new Date().getFullYear();
+document.getElementById("lastModified").innerHTML = "Last Modification: " + document.lastModified;
+
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
   populateProducts();
 });
-

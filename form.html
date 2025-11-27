@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review - WDD 131</title>
-    <meta name="description" content="Submit a product review for your purchased items.">
+    <meta name="description" content="Submit a product review for your purchased items. Rate products, share your experience, and help others make informed decisions.">
     <meta name="author" content="KWIZERA Steven">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
 </head>
 <body>
     <header>
@@ -125,69 +126,5 @@
         <p>©<span id="currentyear"></span> KWIZERA Steven 🌸 Rwanda</p>
         <p id="lastModified"></p>
     </footer>
-
-    <script>
-        // Product array
-        const products = [
-          {
-            id: "fc-1888",
-            name: "flux capacitor",
-            averagerating: 4.5
-          },
-          {
-            id: "fc-2050",
-            name: "power laces",
-            averagerating: 4.7
-          },
-          {
-            id: "fs-1987",
-            name: "time circuits",
-            averagerating: 3.5
-          },
-          {
-            id: "ac-2000",
-            name: "low voltage reactor",
-            averagerating: 3.9
-          },
-          {
-            id: "jj-1969",
-            name: "warp equalizer",
-            averagerating: 5.0
-          }
-        ];
-
-        // Populate product select dropdown
-        function populateProducts() {
-          const productSelect = document.getElementById("productName");
-          
-          if (!productSelect) {
-            return;
-          }
-
-          // Clear existing options except the first placeholder
-          const placeholder = productSelect.querySelector('option[disabled][selected]');
-          productSelect.innerHTML = '';
-          if (placeholder) {
-            productSelect.appendChild(placeholder);
-          }
-
-          // Add product options dynamically
-          products.forEach(product => {
-            const option = document.createElement("option");
-            option.value = product.id;
-            option.textContent = product.name;
-            productSelect.appendChild(option);
-          });
-        }
-
-        // Get current year and last modified date
-        document.getElementById("currentyear").textContent = new Date().getFullYear();
-        document.getElementById("lastModified").innerHTML = "Last Modification: " + document.lastModified;
-
-        // Initialize when DOM is loaded
-        document.addEventListener("DOMContentLoaded", function() {
-          populateProducts();
-        });
-    </script>
 </body>
 </html>
