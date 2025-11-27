@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Submitted - WDD 131</title>
+    <meta name="description" content="Product review submission confirmation">
+    <meta name="author" content="KWIZERA Steven">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/review.css">
+</head>
+<body>
+    <header>
+        <h1>Review Submitted</h1>
+    </header>
+
+    <main>
+        <div class="confirmation-container">
+            <div class="confirmation-message">
+                <h2>Thank You!</h2>
+                <p>Your product review has been successfully submitted.</p>
+                <p>We appreciate your feedback and will use it to improve our products and services.</p>
+            </div>
+
+            <div class="review-summary">
+                <h3>Review Summary</h3>
+                <div id="reviewDetails"></div>
+            </div>
+
+            <div class="review-counter">
+                <p>Total Reviews Submitted: <strong id="reviewCount">0</strong></p>
+            </div>
+
+            <div class="action-buttons">
+                <a href="form.html" class="btn">Submit Another Review</a>
+                <a href="index.html" class="btn btn-secondary">Return to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> KWIZERA Steven 🌸 Rwanda</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Handle localStorage counter for reviews
+        function updateReviewCounter() {
+          let reviewCount = localStorage.getItem("reviewCount");
+          
+          if (reviewCount === null) {
+            reviewCount = 0;
+          } else {
+            reviewCount = parseInt(reviewCount, 10);
+          }
+          
+          // Increment the counter
+          reviewCount++;
+          
+          // Save back to localStorage
+          localStorage.setItem("reviewCount", reviewCount);
+          
+          // Display the count
+          const countElement = document.getElementById("reviewCount");
+          if (countElement) {
+            countElement.textContent = reviewCount;
+          }
+        }
+
+        // Display review details from URL parameters
+        function displayReviewDetails() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const reviewDetails = document.getElementById("reviewDetails");
+          
+          if (!reviewDetails) {
+            return;
+          }
+
+          const productName = urlParams.get("productName");
+          const rating = urlParams.get("rating");
+          const installDate = urlParams.get("installDate");
+          const features = urlParams.getAll("features");
+          const writtenReview = urlParams.get("writtenReview");
+          const userName = urlParams.get("userName");
+
+          let html = "<dl>";
+
+          if (productName) {
+            // Find product name from products array
+            const products = [
+              { id: "fc-1888", name: "flux capacitor" },
+              { id: "fc-2050", name: "power laces" },
+              { id: "fs-1987", name: "time circuits" },
+              { id: "ac-2000", name: "low voltage reactor" },
+              { id: "jj-1969", name: "warp equalizer" }
+            ];
+            const product = products.find(p => p.id === productName);
+            html += `<dt>Product:</dt><dd>${product ? product.name : productName}</dd>`;
+          }
+
+          if (rating) {
+            let stars = "";
+            for (let i = 0; i < parseInt(rating); i++) {
+              stars += "★";
+            }
+            html += `<dt>Rating:</dt><dd>${stars} (${rating}/5)</dd>`;
+          }
+
+          if (installDate) {
+            const date = new Date(installDate);
+            const formattedDate = date.toLocaleDateString("en-US", { 
+              year: "numeric", 
+              month: "long", 
+              day: "numeric" 
+            });
+            html += `<dt>Installation Date:</dt><dd>${formattedDate}</dd>`;
+          }
+
+          if (features && features.length > 0) {
+            html += `<dt>Useful Features:</dt><dd>${features.join(", ")}</dd>`;
+          }
+
+          if (writtenReview) {
+            html += `<dt>Review:</dt><dd>${writtenReview}</dd>`;
+          }
+
+          if (userName) {
+            html += `<dt>Reviewer:</dt><dd>${userName}</dd>`;
+          }
+
+          html += "</dl>";
+          reviewDetails.innerHTML = html;
+        }
+
+        // Get current year and last modified date
+        document.getElementById("currentyear").textContent = new Date().getFullYear();
+        document.getElementById("lastModified").innerHTML = "Last Modification: " + document.lastModified;
+
+        // Initialize when DOM is loaded
+        document.addEventListener("DOMContentLoaded", function() {
+          updateReviewCounter();
+          displayReviewDetails();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review - WDD 131</title>
+    <meta name="description" content="Submit a product review for your purchased items.">
+    <meta name="author" content="KWIZERA Steven">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+        <form method="get" action="review.html" id="reviewForm">
+            <fieldset>
+                <legend>Product Information</legend>
+                
+                <div class="form-group">
+                    <label for="productName">Product Name <span class="required">*</span></label>
+                    <select id="productName" name="productName" required>
+                        <option value="" disabled selected>Select a Product ...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Overall Rating <span class="required">*</span></label>
+                    <div class="rating-group">
+                        <div class="rating-option">
+                            <input type="radio" id="rating1" name="rating" value="1" required>
+                            <label for="rating1" class="rating-label">
+                                <span class="star">☆</span>
+                                <span class="rating-text">1</span>
+                            </label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="rating2" name="rating" value="2" required>
+                            <label for="rating2" class="rating-label">
+                                <span class="star">☆</span>
+                                <span class="rating-text">2</span>
+                            </label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="rating3" name="rating" value="3" required>
+                            <label for="rating3" class="rating-label">
+                                <span class="star">☆</span>
+                                <span class="rating-text">3</span>
+                            </label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="rating4" name="rating" value="4" required>
+                            <label for="rating4" class="rating-label">
+                                <span class="star">☆</span>
+                                <span class="rating-text">4</span>
+                            </label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="rating5" name="rating" value="5" required>
+                            <label for="rating5" class="rating-label">
+                                <span class="star">☆</span>
+                                <span class="rating-text">5</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="installDate">Date of Installation <span class="required">*</span></label>
+                    <input type="date" id="installDate" name="installDate" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Product Features</legend>
+                
+                <div class="form-group">
+                    <label>Which features did you find useful in the product? (Check all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="featureDurability" name="features" value="Durability">
+                            <label for="featureDurability">Durability</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="featureEase" name="features" value="Ease of Use">
+                            <label for="featureEase">Ease of Use</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="featurePerformance" name="features" value="Performance">
+                            <label for="featurePerformance">Performance</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="featureDesign" name="features" value="Design">
+                            <label for="featureDesign">Design</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Review Details</legend>
+                
+                <div class="form-group">
+                    <label for="writtenReview">Written Review (Optional)</label>
+                    <textarea id="writtenReview" name="writtenReview" rows="6" placeholder="Share your experience with this product..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="userName">Your Name (Optional)</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your name">
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <input type="submit" value="Post Review" id="submitBtn">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> KWIZERA Steven 🌸 Rwanda</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Product array
+        const products = [
+          {
+            id: "fc-1888",
+            name: "flux capacitor",
+            averagerating: 4.5
+          },
+          {
+            id: "fc-2050",
+            name: "power laces",
+            averagerating: 4.7
+          },
+          {
+            id: "fs-1987",
+            name: "time circuits",
+            averagerating: 3.5
+          },
+          {
+            id: "ac-2000",
+            name: "low voltage reactor",
+            averagerating: 3.9
+          },
+          {
+            id: "jj-1969",
+            name: "warp equalizer",
+            averagerating: 5.0
+          }
+        ];
+
+        // Populate product select dropdown
+        function populateProducts() {
+          const productSelect = document.getElementById("productName");
+          
+          if (!productSelect) {
+            return;
+          }
+
+          // Clear existing options except the first placeholder
+          const placeholder = productSelect.querySelector('option[disabled][selected]');
+          productSelect.innerHTML = '';
+          if (placeholder) {
+            productSelect.appendChild(placeholder);
+          }
+
+          // Add product options dynamically
+          products.forEach(product => {
+            const option = document.createElement("option");
+            option.value = product.id;
+            option.textContent = product.name;
+            productSelect.appendChild(option);
+          });
+        }
+
+        // Get current year and last modified date
+        document.getElementById("currentyear").textContent = new Date().getFullYear();
+        document.getElementById("lastModified").innerHTML = "Last Modification: " + document.lastModified;
+
+        // Initialize when DOM is loaded
+        document.addEventListener("DOMContentLoaded", function() {
+          populateProducts();
+        });
+    </script>
+</body>
+</html>
