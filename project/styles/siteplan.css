@@ -1,0 +1,339 @@
+/* Website Planning Document Styles */
+/* Using the defined color schema and typography */
+
+:root {
+    --primary-color: #1B4332;
+    --secondary-color: #40916C;
+    --accent-color: #F4A261;
+    --text-color: #2D3436;
+    --background-color: #F8F9FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Typography - Using Merriweather for headings */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 2rem;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Site Name Section */
+.site-name-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.domain-info {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: var(--background-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Color Schema Section */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.color-box {
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    border: 2px solid var(--secondary-color);
+}
+
+.color-swatch {
+    width: 100%;
+    height: 80px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.color-box p {
+    margin-bottom: 0.5rem;
+}
+
+/* Typography Section */
+.typography-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.font-example {
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.font-heading {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.font-description {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.font-sample {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 4px;
+}
+
+/* Wireframes Section */
+.wireframe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.wireframe-box {
+    padding: 1rem;
+}
+
+.wireframe-box h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.wireframe {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+    min-height: 400px;
+}
+
+/* Mobile Wireframe */
+.wireframe.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.wf-header, .wf-nav, .wf-hero, .wf-section, .wf-footer {
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+.wf-header {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.wf-nav {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.wf-hero {
+    min-height: 120px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.wf-footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Desktop Wireframe */
+.wireframe.desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.wf-header-wide {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.wf-hero-wide {
+    padding: 2rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 4px;
+    min-height: 150px;
+}
+
+.wf-content-wide {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.5rem;
+}
+
+.wf-main {
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    min-height: 200px;
+}
+
+.wf-sidebar {
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    min-height: 200px;
+}
+
+.wf-footer-wide {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.wireframe-note {
+    margin-top: 1rem;
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--text-color);
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .color-palette {
+        grid-template-columns: 1fr;
+    }
+    
+    .typography-examples {
+        grid-template-columns: 1fr;
+    }
+    
+    .wireframe-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .wf-content-wide {
+        grid-template-columns: 1fr;
+    }
+}
+
