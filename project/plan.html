@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rwanda Travel Guide | Plan Your Trip</title>
+  <meta name="description" content="Plan your trip to Rwanda with a simple form to note your preferences and save them in your browser.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link">
+        <span class="logo-title">Rwanda Travel Guide</span>
+        <span class="logo-tagline">Land of a Thousand Hills</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="culture.html">Culture & Tips</a>
+      <a href="plan.html" class="active">Plan Your Trip</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-header">
+      <h1>Plan Your Trip</h1>
+      <p>Use this simple planner to record your travel preferences. Your last plan is saved in your browser.</p>
+    </header>
+
+    <section class="card">
+      <h2>Trip Planner</h2>
+      <form id="tripForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="name">Name<span aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email<span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="startDate">Arrival Date<span aria-hidden="true">*</span></label>
+            <input type="date" id="startDate" name="startDate" required>
+          </div>
+          <div class="form-field">
+            <label for="nights">Number of Nights</label>
+            <input type="number" id="nights" name="nights" min="1" max="30" value="7">
+          </div>
+          <div class="form-field">
+            <label for="focus">Trip Focus</label>
+            <select id="focus" name="focus">
+              <option value="relax">Relaxed & Scenic</option>
+              <option value="adventure">Adventure & Wildlife</option>
+              <option value="culture">Culture & History</option>
+            </select>
+          </div>
+          <fieldset class="form-field">
+            <legend>Places You Want to Visit</legend>
+            <label><input type="checkbox" name="places" value="kigali"> Kigali City</label>
+            <label><input type="checkbox" name="places" value="volcanoes"> Volcanoes National Park</label>
+            <label><input type="checkbox" name="places" value="lakeKivu"> Lake Kivu</label>
+          </fieldset>
+          <div class="form-field full-width">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Anything special you want to remember?"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="button primary">Save My Plan</button>
+      </form>
+      <p id="formMessage" class="form-message" aria-live="polite"></p>
+    </section>
+
+    <section class="card card-accent">
+      <h2>Your Last Saved Plan</h2>
+      <div id="savedPlan" class="saved-plan">
+        <p>No plan saved yet. Fill out the form above to create one.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> Rwanda Travel Guide</p>
+    <p id="lastModified"></p>
+    <p><a href="references.html">References &amp; Credits</a></p>
+  </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rwanda Travel Guide | Home</title>
+  <meta name="description" content="Discover Rwanda with a simple travel guide featuring top destinations, culture tips, and trip planning help.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link">
+        <span class="logo-title">Rwanda Travel Guide</span>
+        <span class="logo-tagline">Land of a Thousand Hills</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="culture.html">Culture & Tips</a>
+      <a href="plan.html">Plan Your Trip</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="../images/rwanda-image.jpg" media="(min-width: 768px)">
+        <img src="../images/rwanda-image.jpg" alt="Green rolling hills in Rwanda at sunrise" loading="eager">
+      </picture>
+      <div class="hero-text">
+        <h1>Experience Rwanda</h1>
+        <p>Peaceful hills, vibrant cities, and unforgettable wildlife — plan your visit with clear, practical guidance.</p>
+        <a class="button primary" href="plan.html">Start Planning</a>
+      </div>
+    </section>
+
+    <section class="intro-grid">
+      <article class="card">
+        <h2>Why Visit Rwanda?</h2>
+        <p>Rwanda is one of Africa&rsquo;s safest and cleanest destinations. From Kigali&rsquo;s modern skyline to the misty volcanoes in the north, the country offers a calm, welcoming atmosphere for first‑time and experienced travelers.</p>
+      </article>
+      <article class="card">
+        <h2>At a Glance</h2>
+        <dl class="facts">
+          <div>
+            <dt>Capital</dt>
+            <dd>Kigali</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>Kinyarwanda, English, French</dd>
+          </div>
+          <div>
+            <dt>Best Time to Visit</dt>
+            <dd>June–September, December–February</dd>
+          </div>
+        </dl>
+      </article>
+      <article class="card">
+        <h2>Trip Mood</h2>
+        <p>Use the simple selector below to see quick suggestions based on the type of experience you want.</p>
+        <label for="tripMood" class="visually-hidden">Select trip mood</label>
+        <select id="tripMood">
+          <option value="relax" selected>Relaxed & Scenic</option>
+          <option value="adventure">Adventure & Wildlife</option>
+          <option value="culture">Culture & History</option>
+        </select>
+        <div id="moodSuggestion" class="mood-suggestion" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section class="highlights">
+      <h2>Highlights You Shouldn&rsquo;t Miss</h2>
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <img src="../images/rwanda-image.jpg" alt="Lake and hills in Rwanda" loading="lazy">
+          <h3>Lake Kivu</h3>
+          <p>Relax by the water in Gisenyi or Kibuye, enjoy fresh fish, and watch golden sunsets over the hills.</p>
+        </article>
+        <article class="highlight-card">
+          <img src="../images/rwanda-image.jpg" alt="Mountain landscape representing Volcanoes National Park" loading="lazy">
+          <h3>Volcanoes National Park</h3>
+          <p>Home to mountain gorillas and mist‑covered volcanoes. Gorilla trekking requires advance permits.</p>
+        </article>
+        <article class="highlight-card">
+          <img src="../images/profile.jpg" alt="City view representing Kigali" loading="lazy">
+          <h3>Kigali City</h3>
+          <p>Clean streets, friendly cafés, and moving memorials that tell Rwanda&rsquo;s story of resilience.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> Rwanda Travel Guide</p>
+    <p id="lastModified"></p>
+    <p><a href="references.html">References &amp; Credits</a></p>
+  </footer>
+</body>
+</html>
+
+

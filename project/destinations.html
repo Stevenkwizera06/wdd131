@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rwanda Travel Guide | Destinations</title>
+  <meta name="description" content="Explore key destinations in Rwanda including Kigali, Volcanoes National Park, and Lake Kivu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link">
+        <span class="logo-title">Rwanda Travel Guide</span>
+        <span class="logo-tagline">Land of a Thousand Hills</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a>
+      <a href="destinations.html" class="active">Destinations</a>
+      <a href="culture.html">Culture & Tips</a>
+      <a href="plan.html">Plan Your Trip</a>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-header">
+      <h1>Top Destinations in Rwanda</h1>
+      <p>These locations offer a balanced first impression of Rwanda: nature, culture, and time by the lake.</p>
+    </header>
+
+    <section class="filter-bar">
+      <h2 class="visually-hidden">Filter destinations</h2>
+      <label for="typeFilter">Filter by type:</label>
+      <select id="typeFilter">
+        <option value="all">All</option>
+        <option value="city">City</option>
+        <option value="nature">Nature</option>
+        <option value="lake">Lake</option>
+      </select>
+    </section>
+
+    <section id="destinationsList" class="destination-grid" aria-live="polite">
+      <!-- Cards will be injected here with JavaScript -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentYear"></span> Rwanda Travel Guide</p>
+    <p id="lastModified"></p>
+    <p><a href="references.html">References &amp; Credits</a></p>
+  </footer>
+</body>
+</html>
+
+
